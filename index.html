@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bankers Edge — Design Previews</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Mulish:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --navy:#15315f; --navy-deep:#0f2549; --blue:#1e57b8;
+    --ink:#26303f; --muted:#5d6878; --line:#dde4ee; --panel:#eef2f8;
+    --font-head:'Poppins',system-ui,sans-serif;
+    --font-body:'Mulish',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--panel);}
+  .wrap{max-width:960px;margin:0 auto;padding:40px 24px 32px;}
+  .eyebrow{font-family:var(--font-head);font-weight:600;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--blue);margin:0 0 8px;}
+  h1{font-family:var(--font-head);font-weight:700;font-size:34px;line-height:1.1;
+    color:var(--navy);margin:0 0 8px;letter-spacing:-.01em;}
+  .sub{font-size:15px;line-height:1.55;color:var(--muted);margin:0 0 24px;max-width:620px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;}
+  .card{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid var(--line);
+    border-radius:12px;padding:18px 20px;text-decoration:none;color:inherit;
+    transition:transform .16s,box-shadow .16s,border-color .16s;}
+  .card:hover{transform:translateY(-2px);border-color:var(--blue);
+    box-shadow:0 14px 30px -14px rgba(15,37,73,.4);}
+  .card h2{font-family:var(--font-head);font-weight:600;font-size:18px;color:var(--navy);margin:0;}
+  .card p{font-size:13.5px;line-height:1.5;color:var(--muted);margin:0;}
+  .card span{font-family:var(--font-head);font-weight:600;font-size:12.5px;color:var(--blue);margin-top:4px;}
+  .note{margin:24px 0 0;font-size:12.5px;line-height:1.55;color:var(--muted);}
+  .note code{background:#fff;border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:12px;}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Bankers Edge Advisory</p>
+  <h1>Design Previews</h1>
+  <p class="sub">Static React prototypes rendered in-browser. Pick a canvas.</p>
+
+  <div class="grid">
+    <a class="card" href="Service%20Page%20Options.html">
+      <h2>Service Page Options</h2>
+      <p>Layout explorations for the services page, side by side on one canvas.</p>
+      <span>Open →</span>
+    </a>
+    <a class="card" href="About%20-%20Team%20Layouts.html">
+      <h2>About — Team Layouts</h2>
+      <p>Team section variants with headshots, bios, and social links.</p>
+      <span>Open →</span>
+    </a>
+  </div>
+
+  <p class="note">Pages compile JSX in the browser via <code>@babel/standalone</code> — first paint takes a moment.</p>
+</main>
+</body>
+</html>
