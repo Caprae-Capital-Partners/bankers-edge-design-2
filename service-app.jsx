@@ -1,6 +1,6 @@
 /* App: chrome, hash router, index, landing, detail wrapper. */
 (function () {
-  const { useState, useEffect, IcMail, IcPhone, IcPin, IcLinked, IcArrow, IcBack, RichText, NarrativeSections } = window.UI;
+  const { useState, useEffect, IcMail, IcPhone, IcPin, IcLinked, IcArrow, IcBack, RichText } = window.UI;
   const SERVICES = window.SERVICES;
   const DESIGN_META = window.DESIGN_META;
   const DESIGNS = window.DESIGNS;
@@ -99,8 +99,6 @@
         {s.blocksIntro && <p className="be-blocks-intro">{s.blocksIntro}</p>}
         <Design service={s} />
       </section>
-
-      <NarrativeSections service={s} />
 
       <div className="be-detail-nav">
         <button className="be-back" onClick={() => { window.location.hash = `#/${opt}`; }}><IcBack/> Back to Services</button>

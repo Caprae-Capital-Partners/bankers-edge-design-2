@@ -1,4 +1,4 @@
-/* Shared UI: icons, rich-text, narrative sections. Exposed on window.UI. */
+/* Shared UI: icons, rich-text, block content. Exposed on window.UI. */
 const { useState, useEffect } = React;
 
 const IcMail = () => (<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>);
@@ -23,32 +23,6 @@ function ImgNote({ note }) {
   return <div className="be-imgnote"><IcImg/> Image: {note}</div>;
 }
 
-/* full-page narrative sections, shared by all designs */
-function NarrativeSections({ service }) {
-  return (
-    <section className="be-narr">
-      <div className="be-narr-inner">
-        {service.sections.map((s, i) => (
-          <div className="be-narr-block" key={i}>
-            <h2 className="be-narr-h">{s.heading}</h2>
-            {s.imageNote && <ImgNote note={s.imageNote} />}
-            {s.body && <RichText items={s.body} pClass="be-narr-p" />}
-            {s.intro && <p className="be-narr-p">{s.intro}</p>}
-            {s.list && <ul className="be-narr-list">{s.list.map(x => <li key={x}>{x}</li>)}</ul>}
-            {s.steps && (
-              <ol className="be-steps">
-                {s.steps.map((st, k) => (
-                  <li key={k}><span className="be-step-n">{String(k+1).padStart(2,'0')}</span><div><strong>{st.label}</strong><span>{st.text}</span></div></li>
-                ))}
-              </ol>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 /* full block content (used inside every design's expanded state) */
 function BlockContent({ b }) {
   return (
@@ -60,4 +34,4 @@ function BlockContent({ b }) {
   );
 }
 
-window.UI = { useState, useEffect, IcMail, IcPhone, IcPin, IcLinked, IcArrow, IcBack, IcPlus, IcImg, Para, RichText, ImgNote, NarrativeSections, BlockContent };
+window.UI = { useState, useEffect, IcMail, IcPhone, IcPin, IcLinked, IcArrow, IcBack, IcPlus, IcImg, Para, RichText, ImgNote, BlockContent };
